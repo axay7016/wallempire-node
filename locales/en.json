@@ -1,0 +1,277 @@
+{
+    "genericErrMsg": {
+        "200": "Success.",
+        "204": "Data Not Found successfully.",
+        "400": "Value in any of the mandatory field's is missing.",
+        "401": "Unauthorised token",
+        "403": "Invalid Call, Access Token is not Expired.",
+        "404": "Data you have requsted is Not Found.",
+        "405": "action not allowed",
+        "406": "Invalid Call, Access Token Expired.",
+        "409": "duplicate",
+        "417": "Invalid Refresh Token Passed.",
+        "440": "Token Expire.",
+        "498": "Invalid Token.",
+        "500": "An unknown error has occurred.",
+        "501": "Implement  error."
+    },
+    "header": {
+        "Authorization": "Authorization token, Ex: Key",
+        "Language": "Language of response, Ex: en"
+    },
+    "category": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new category details.",
+            "fieldsDescription": {
+                "categoryName": "Select category name, Ex: curtains",
+                "categoryImage": "Select category image, Ex: curtains",
+                "categoryStatus": "Select category status, Ex: curtains",
+                "parentCategoryId": "Category Id of parent category, Ex: 5f32baa915b6291843fdc864",
+                "itemArray": "Category items array, Ex: Kool Kids"
+            },
+            "error": {}
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice category details.",
+            "fieldsDescription": {
+                "categoryName": "Your category name, Ex: curtains"
+            },
+            "error": {}
+        }
+    },
+    "sub-category": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new sub-category details.",
+            "fieldsDescription": {
+                "section_id": "Please add Section",
+                "categoryName": "Please add category name",
+                "description": "Please add the description"
+            },
+            "error": {}
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice sub-category details.",
+            "fieldsDescription": {
+                "subCatgory_id": "category Id invalid"
+            },
+            "error": {}
+        },
+        "Delete": {
+            "ApiDescription": "This API is use to Delete a sub-category details.",
+            "fieldsDescription": {
+                "sub_category_id": "Invalid sub-category ID"
+            },
+            "error": {}
+        }
+    },
+    "section": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new Section details.",
+            "fieldsDescription": {
+                "categoryName": "Select category name, Ex: curtains",
+                "categoryStatus": "Select category status, Ex: curtains",
+                "parentCategoryId": "Category Id of parent category, Ex: 5f32baa915b6291843fdc864",
+                "items": "Category items array, Ex: Kool Kids"
+            },
+            "error": {}
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice Section details.",
+            "fieldsDescription": {
+                "categoryName": "Your category name, Ex: curtains"
+            },
+            "error": {}
+        }
+    },
+    "product": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new product details.",
+            "fieldsDescription": {
+                "postName": "Select product name, Ex: curtains",
+                "description": "Please add the description",
+                "price": "Please enter the amount",
+                "category_id": "Select the category",
+                "postImage": "Select product image, Ex: curtains",
+                "categoryStatus": "Select category status, Ex: curtains",
+                "itemArray": "Product items array, Ex: Kool Kids",
+                "width": "Please enter width",
+                "composition": "Please enter composition",
+                "repeat_size": "Please enter repeat_size",
+                "weight_gsm": "Please enter weight_gsm",
+                "end_use": "Please enter end_use",
+                "url": "Please enter URL"
+            },
+            "error": {
+                "category_id": "Category not Found",
+                "sub_category_id": "Sub-Category not Found"
+            }
+        },
+        "Put": {
+            "ApiDescription": "This API is use to update a new product details.",
+            "fieldsDescription": {
+                "postName": "Select product name, Ex: curtains",
+                "description": "Please add the description",
+                "price": "Please enter the amount",
+                "category_id": "Select the category",
+                "postImage": "Select product image, Ex: curtains",
+                "categoryStatus": "Select category status, Ex: curtains",
+                "itemArray": "Product items array, Ex: Kool Kids",
+                "width": "Please enter width",
+                "composition": "Please enter composition",
+                "repeat_size": "Please enter repeat_size",
+                "weight_gsm": "Please enter weight_gsm",
+                "end_use": "Please enter end_use",
+                "url": "Please enter URL"
+            },
+            "error": {
+                "category_id": "Category not Found",
+                "sub_category_id": "Sub-Category not Found"
+            }
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice post details.",
+            "fieldsDescription": {
+                "category_id": "Select the category",
+                "sub_category_id": "Sub-Category not Found"
+            },
+            "error": {}
+        }
+    },
+    "order": {
+        "Post": {
+            "ApiDescription": "This API is use to order a new order details.",
+            "fieldsDescription": {
+                "height": "Please enter height",
+                "width": "Please enter width",
+                "color": "Please enter color",
+                "user_id": "User id is not available",
+                "product_id": "Please Enetr Product Id",
+                "status": "Order Status"
+            },
+            "error": {
+                "product": "Product not Found"
+            }
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice order details.",
+            "fieldsDescription": {
+                "user_id": "User id is not valid"
+            },
+            "error": {}
+        }
+    },
+    "signIn": {
+        "Post": {
+            "ApiDescription": "This API is use for signIn user into system.",
+            "fieldsDescription": {
+                "email": "Your email, Ex: abc@gmail.com",
+                "password": "Your account password, Ex: xxxxxxxx",
+                "user_id": "Please enter valid user ID, Ex: 625f35667aa73b3f5f82cd29",
+                "active": "Please enter valid value",
+                "ban": "Please enter valid value"
+            },
+            "error": {
+                "login": "Please enter your valid email and password",
+                "active": "User is not activated",
+                "ban": "User is ban"
+            }
+        }
+    },
+    "signUp": {
+        "Post": {
+            "ApiDescription": "This API is use for signUp user into system.",
+            "fieldsDescription": {
+                "username": "Your username for account, Ex: Jhon",
+                "phoneNumber": "Your phoneNumber for contact, Ex: 1234567890",
+                "companyName": "Your companyName for Identification, Ex: Jhon coporation ltd.",
+                "email": "Your email, Ex: abc@gmail.com",
+                "GST":"Your GST Number",
+                "password": "Your new account password, Ex: xxxxxxxx",
+                "confirmPassword": "Your password same as above password, Ex: xxxxxxxx"
+            },
+            "error": {
+                "duplicate": "Duplicate mobile-number and email"
+            }
+        }
+    },
+    "banner": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new category details.",
+            "fieldsDescription": {
+                "bannerImage": "Please select banner Image",
+                "type": "Please Add the banner type"
+            },
+            "error": {}
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice category details.",
+            "fieldsDescription": {
+                "type": "Please add the banner type"
+            },
+            "error": {}
+        }
+    },
+    "featureProduct": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new featureProduct details.",
+            "fieldsDescription": {
+                "category_id": "Please enter category Id, Ex: 5f32baa915b6291843fdc864",
+                "product_id": "Please enter product Id, Ex: 5f32baa915b6291843fdc864"
+            },
+            "error": {}
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice featureProduct details.",
+            "fieldsDescription": {
+                "category_id": "Categpry Id is not valid"
+            },
+            "error": {}
+        }
+    },
+    "enquiry": {
+        "Post": {
+            "ApiDescription": "This API is use to enquiry a new enquiry details.",
+            "fieldsDescription": {
+                "name": "Please enter your name",
+                "contact_number": "Please add your Contact number",
+                "email": "Please add your Email",
+                "enquiry_details": "Please the details of the what kind of enquiry"
+            },
+            "error": {
+                "product": "Product not Found"
+            }
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice enquiry details.",
+            "fieldsDescription": {
+                "user_id": "User id is not valid"
+            },
+            "error": {}
+        }
+    },
+    "user": {
+        "Post": {
+            "ApiDescription": "This API is use to post a new user details.",
+            "fieldsDescription": {
+                "height": "Please enter height",
+                "width": "Please enter width",
+                "color": "Please enter color",
+                "user_id": "User id is not available",
+                "product_id": "Please Enetr Product Id",
+                "status": "Order Status"
+            },
+            "error": {
+                "product": "Product not Found"
+            }
+        },
+        "Get": {
+            "ApiDescription": "This API is use to get all or specifice user details.",
+            "fieldsDescription": {
+                "user_id": "User id is not valid",
+                "page": "Please enetr valid page",
+                "limit": "please enter valid limit"
+            },
+            "error": {}
+        }
+    }
+}

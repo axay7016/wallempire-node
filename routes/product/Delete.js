@@ -1,0 +1,50 @@
+'use strict'
+
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi)
+const postCollection = require("../../models/product");
+const logger = require('winston');
+const locals = require('../../locales');
+const { ObjectId } = require('mongodb');
+/**
+ * @description post a new post
+ * @property {string} authorization - authorization
+ * @property {string} lang - language
+ * @property {string} postName - for select specific post details
+ * @returns 200 : Success
+ * @returns 500 : Internal Server Error
+ * 
+ * @author Vatsal Sorathiya
+ * @date 11-Dec-2020
+ */
+
+const validator = Joi.object({
+    product_id: Joi.string().required().description(locals['product'].Post.fieldsDescription.postName)
+}).unknown();
+
+const handler = async (req, res) => {
+    try {
+        const query = req.query
+        const deleteResult = await postCollection.Delete({ _id: ObjectId(query.product_id) })
+        if (deleteResult) {
+            return res.response({
+                message: locals["genericErrMsg"]["200"],
+                data: deleteResult
+            }).code(200);
+        } else {
+            return res.response({ message: locals["genericErrMsg"]["204"] }).code(409);
+        }
+    } catch (e) {
+        logger.error(e.message)
+        return res.response({ message: locals["genericErrMsg"]["500"] }).code(500);
+    }
+}
+
+const response = {
+    status: {
+        200: Joi.object({ message: Joi.any().default(locals["genericErrMsg"]["200"]), data: Joi.any() }),
+        500: Joi.object({ message: Joi.any().default(locals["genericErrMsg"]["500"]) }),
+    }
+}
+
+module.exports = { validator, response, handler }
